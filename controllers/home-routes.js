@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Post } = require("../models");
+const { User, Market, Item } = require("../models");
 // Middleware goes here
 
 module.exports = router;
