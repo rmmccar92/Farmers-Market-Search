@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Market extends Model {}
 
@@ -19,17 +19,20 @@ Market.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    products: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     hours: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    zip_code: {
+    zipcode: {
       type: DataTypes.INTEGER,
       allowNull: false,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
+      },
     },
   },
   {
@@ -37,7 +40,7 @@ Market.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'market',
+    modelName: "market",
   }
 );
 
