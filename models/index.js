@@ -1,6 +1,6 @@
 const User = require("./User");
 const Market = require("./Market");
-const Item = require("./Item");
+// const Item = require("./Item");
 
 Market.belongsTo(User, {
   foreignKey: "user_id",
