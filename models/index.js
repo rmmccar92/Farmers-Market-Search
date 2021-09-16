@@ -12,4 +12,4 @@ User.hasMany(Market, {
   onDelete: "CASCADE",
 });
 
-module.exports = { User, Market, Item };
+module.exports = { User, Market };
