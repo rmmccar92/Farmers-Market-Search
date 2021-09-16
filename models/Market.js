@@ -19,15 +19,11 @@ Market.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    products: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     hours: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    zip_code: {
+    zipcode: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
