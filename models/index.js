@@ -1,4 +1,4 @@
 const User = require("./User");
-const User = require("./Market");
+const Market = require("./Market");
 
 module.exports = { User, Market };
