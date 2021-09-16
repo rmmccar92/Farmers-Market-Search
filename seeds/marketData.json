@@ -1,0 +1,35 @@
+[
+  {
+    "market_name": "Fantastic food 1",
+    "address": "address data",
+    "products": [
+      "test",
+      "test",
+      "test"
+    ],
+    "hours": "9 to 5",
+    "zipcode": "23666"
+  },
+  {
+    "market_name": "Fantastic food 2",
+    "address": "address data",
+    "products": [
+      "test",
+      "test",
+      "test"
+    ],
+    "hours": "9 to 5",
+    "zipcode": "23666"
+  },
+  {
+    "market_name": "Fantastic food 3",
+    "address": "address data",
+    "products": [
+      "test",
+      "test",
+      "test"
+    ],
+    "hours": "9 to 5",
+    "zipcode": "23666"
+  }
+]
