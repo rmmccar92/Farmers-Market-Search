@@ -27,6 +27,10 @@ Market.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    zip_code: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   },
   {
     sequelize,
