@@ -1,13 +1,22 @@
 const router = require("express").Router();
-const { Post, Market } = require("../models");
+const { User, Market } = require("../models");
 const withAuth = require("../utils/auth");
 
-router.get("/", withAuth, async (req, res) => {
+router.get("/:id", withAuth, async (req, res) => {
   try {
-    const marketData = await Market.findAll({
+    const userData = await User.findByPk({
       where: {
-        user_id: req.params.id,
+        user_id: req.params.user_id,
       },
+      attributes: {
+        exclude: ["password"],
+        include: [{ model: Market, attributes: ["market_name"] }],
+      },
+    });
+    const user = userData.map((user) => user.get({ plain: true }));
+    res.render("user-page", {
+      layout: "dashboard",
+      user,
     });
   } catch (err) {
     res.status(500).json(err);
