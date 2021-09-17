@@ -1,42 +1,29 @@
 const router = require("express").Router();
 const { User, Market, Item } = require("../models");
-// Middleware goes here
+const withAuth = require("../utils/auth");
 
-// All markets
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
-    const marketData = await Market.findAll({
-      // Included models/attributes will go here
+    const userData = await User.findAll({
+      attributes: { exclude: ["password"] },
+      order: [["last_name", "ASC"]],
     });
-    const markets = marketData.map((market) => market.get({ plain: true }));
+
+    const users = userData.map((market) => market.get({ plain: true }));
+
     res.render("homepage", {
-      markets,
+      users,
+      // Pass the logged in flag to the template
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// Single Markets
-
-router.get("/", async (req, res) => {
-  try {
-    const marketData = await Market.findByPk(req.params.id, {
-      //   Included models/attributes will go here
-    });
-    if (marketData) {
-      const market = marketData.get({ plain: true });
-      res.render("market", { market });
-    } else {
-      res.status(404).json({ message: "Market not found." }).end();
-    }
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 // Account login and signup
 router.get("/login", (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     res.redirect("/");
     return;
   }
@@ -45,7 +32,7 @@ router.get("/login", (req, res) => {
 });
 
 router.get("/signup", (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     res.redirect("/");
     return;
   }
