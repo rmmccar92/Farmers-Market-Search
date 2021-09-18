@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Market } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
@@ -23,14 +24,13 @@ router.get(":/id"),
     }
   };
 
-router.post("/", async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   try {
     const marketData = await Market.create({
-      market_name: req.body.market_name,
-      address: req.body.address,
-      // products: req.body.products,
-      hours: req.body.hours,
+      ...req.body,
+      user_id: req.session.user_id,
     });
+    res.status(200).json(marketData);
   } catch (err) {
     res.status(500).json(err);
   }
