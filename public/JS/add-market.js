@@ -8,7 +8,7 @@ const newMarketHandler = async (event) => {
     .querySelector('input[name="market-address"]')
     .value.trim();
   const hoursEl = document
-    .querySelector('input[name="market-hours]"')
+    .querySelector('input[name="market-hours"]')
     .value.trim();
   const zipcodeEl = document
     .querySelector('input[name="market-zip"]')
@@ -17,7 +17,7 @@ const newMarketHandler = async (event) => {
     const response = await fetch("/api/markets", {
       method: "POST",
       body: JSON.stringify({
-        name: nameEl,
+        market_name: nameEl,
         hours: hoursEl,
         address: addressEl,
         zipcode: zipcodeEl,
