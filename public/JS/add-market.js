@@ -25,7 +25,7 @@ const newMarketHandler = async (event) => {
       headers: { "Content-Type": "application/json" },
     });
     if (response.ok) {
-      document.location.replace("/dashboard");
+      document.location.replace("/");
     } else {
       console.log("Something went wrong");
     }
