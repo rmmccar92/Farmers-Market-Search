@@ -21,6 +21,13 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
+router.get("/add", withAuth, (req, res) => {
+  res.render("new-market", {
+    layout: "dashboard",
+    logged_in: req.session.logged_in,
+  });
+});
+
 // Account login and signup
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
