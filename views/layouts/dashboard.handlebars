@@ -31,38 +31,40 @@
           <li class="nav-item active">
             <a class="nav-link" href="/">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/dashboard">Dashboard</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
-          </li>
-        </ul>
+              {{#if logged_in}}
+                <li>
+                  <a class="nav-link" href="/dashboard">Dashboard</a>
+                </li>
+                |
+                <li>
+                  <a
+                    class="nav-link no-button"
+                    id="logout-link"
+                    href="/"
+                  >Logout</a>
+                </li>
+              {{else}}
+                <li>
+                  <a class="nav-link" href="/login">Login</a>
+                </li>
+              {{/if}}
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
       </div>
     </nav>
-    <header class="text-center site-head">
-      <h1 class="app-title"><a href="/dashboard">Your Dashboard</a></h1>
-    </header>
-    <div class="parallax">
       <main class="col-auto">
         {{{body}}}
-        {{!-- <div class="row dashboard-card">
-          <div class="card p-4 m-2 w-75 mx-auto">
-            <a href="/dashboard/add" class="text-center mx-auto">➕ New Post</a>
-          </div>
-        </div> --}}
       </main>
-
-    </div>
     <footer class="navbar-dark bg-dark text-light">
       <!-- Copyright -->
       <div class="footer-copyright text-center p-4">© 2021 Copyright:
         <a href="https://github.com/rmmccar92" class="text-light"></a>
       </div>
     </footer>
+        {{#if logged_in}}
+      <script src="/js/logout.js"></script>
+       {{/if}}
 </body>
 </html>

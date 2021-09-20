@@ -1,18 +1,18 @@
 const router = require("express").Router();
-const { User, Market, Item } = require("../models");
+const { User, Market } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", withAuth, async (req, res) => {
   try {
-    const userData = await User.findAll({
-      attributes: { exclude: ["password"] },
-      order: [["last_name", "ASC"]],
+    const marketData = await Market.findAll({
+      include: [{ model: User, attributes: { exclude: ["password"] } }],
+      order: [["market_name", "ASC"]],
     });
 
-    const users = userData.map((market) => market.get({ plain: true }));
+    const markets = marketData.map((market) => market.get({ plain: true }));
 
-    res.render("homepage", {
-      users,
+    res.render("all-markets", {
+      markets,
       // Pass the logged in flag to the template
       logged_in: req.session.logged_in,
     });
