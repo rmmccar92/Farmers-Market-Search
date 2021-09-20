@@ -1,3 +1,20 @@
 <header class="text-center site-head">
   <h1 class="app-title">{{first_name}}'s Dashboard</h1>
+  {{#if markets.length}}
+  <div class="col-md-6 project-list">
+    <h3>Your Markets:</h3>
+
+    {{#each markets as |market|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="dashboard/market/{{market.id}}">{{market_name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{market.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}} 
+  </div>
 </header>
