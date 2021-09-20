@@ -1,7 +1,7 @@
 <header class="text-center site-head">
   <h1 class="app-title">{{first_name}}'s Dashboard</h1>
   {{#if markets.length}}
-  <div class="col-md-6 project-list">
+  <div class="col-md-6 market-list">
     <h3>Your Markets:</h3>
 
     {{#each markets as |market|}}
@@ -17,4 +17,7 @@
   </div>
   {{/if}} 
   </div>
+  {{#if logged_in}}
+  <script src="../../JS/delete-market.js"></script>
+  {{/if}}
 </header>
