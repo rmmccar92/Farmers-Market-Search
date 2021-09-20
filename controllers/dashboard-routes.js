@@ -55,4 +55,44 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
+router.get("/market/:id", withAuth, async (req, res) => {
+  try {
+    const marketData = await Market.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ["username"],
+        },
+      ],
+    });
+    const market = marketData.get({ plain: true });
+
+    res.render("market", {
+      layout: "dashboard",
+      ...market,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/market", withAuth, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+      include: [{ model: Market }],
+    });
+    const user = userData.get({ plain: true });
+
+    res.render("market", {
+      layout: "dashboard",
+      ...user,
+      logged_in: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;

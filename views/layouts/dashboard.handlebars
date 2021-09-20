@@ -44,12 +44,23 @@
     </nav>
     <main class="col-auto">
       {{{body}}}
+    {{#if logged_in}}
+    <div class="add-button">
+      <div class="row dashboard-card text-center mx-auto">
+        <div class="card col-4 mx-auto">
+          <a href="/add" class="text-center text-dark mx-auto">➕ Add
+            Market</a>
+        </div>
+      </div>
+    </div>
+    {{/if}}
     </main>
     <footer class="navbar-dark bg-dark text-light">
       <!-- Copyright -->
       <div class="footer-copyright text-center p-4">© 2021 Copyright:
         <a href="https://github.com/rmmccar92" class="text-light"></a>
       </div>
+      
     </footer>
     {{#if logged_in}}
   <script src="JS/logout.js"></script>
