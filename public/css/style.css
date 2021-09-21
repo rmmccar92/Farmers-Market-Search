@@ -7,6 +7,14 @@ body {
   text-align: center;
 }
 
+main {
+  margin-bottom: 30px;
+}
+
+.row {
+  --bs-gutter-x: 0rem !important;
+}
+
 .navbar-light {
   color: white;
 }
@@ -28,7 +36,7 @@ nav {
 }
 
 .nav-link:hover {
-  color: #5f8a6d;
+  color: #5f8a6d !important;
 }
 
 #search {
@@ -37,7 +45,7 @@ nav {
 }
 
 #search:hover {
-  background-color: #8f3d19;
+  background-color: #5f8a6d;
 }
 
 #search-form {
@@ -51,6 +59,10 @@ nav {
   text-align: justify;
 }
 
+.card-header {
+  background-color: #723014;
+}
+
 .col-auto {
   align-content: center;
 }
@@ -59,13 +71,25 @@ nav {
   background-color: #8f3d19;
   border: 1px solid white;
   margin: 10px;
-  align-content: center;
+}
+
+.userMarkets {
+  text-decoration: none;
+}
+
+.userMarkets:hover {
+  text-decoration: none;
+  color: #5f8a6d;
 }
 
 .addition {
   color: white;
   text-decoration: none;
   text-align: center;
+}
+
+.addition:hover {
+  color: #5f8a6d;
 }
 
 .submit {
@@ -77,7 +101,7 @@ nav {
 }
 
 .submit:hover {
-  background-color: #8f3d19;
+  background-color: #5f8a6d;
   border: 1px solid white;
 }
 
@@ -87,7 +111,7 @@ nav {
 }
 
 .btn-danger:hover {
-  background-color: #8f3d19;
+  background-color: #5f8a6d;
   border: 1px solid white;
 }
 
