@@ -1,3 +1,10 @@
+// import AddressAutocomplete from "google-address-autocomplete";
+
+// new AddressAutocomplete('input[name="market-address', (results) => {
+//   const addressObject = results;
+//   console.log(addressObject);
+// });
+
 const newMarketHandler = async (event) => {
   event.preventDefault();
 
