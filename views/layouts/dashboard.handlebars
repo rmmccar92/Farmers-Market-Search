@@ -14,7 +14,7 @@
 <body>
 
   <body class="flex-column min-100-vh">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-light">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -38,7 +38,7 @@
           {{/if}}
           <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <button class="btn btn-outline-success" id="search" type="submit">Search</button>
           </form>
       </div>
     </nav>
@@ -48,7 +48,7 @@
     <div class="add-button">
       <div class="row dashboard-card text-center mx-auto">
         <div class="card col-4 mx-auto">
-          <a href="/add" class="text-center text-dark mx-auto">➕ Add
+          <a class="addition" href="/add" class="text-center text-dark mx-auto">➕ Add
             Market</a>
         </div>
       </div>
