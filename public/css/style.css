@@ -2,9 +2,22 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: auto;
-  background-color: #553b28;
-  color: white;
+  background-color: #f7ebd9;
+  color: black;
   text-align: center;
+}
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
 }
 
 main {
@@ -24,10 +37,12 @@ a {
   cursor: pointer;
 }
 
-nav {
-  background-color: #374f3f;
-  border: 3px solid #374f3f;
-  width: 100%;
+.navbar {
+  background-color: #1e3325;
+}
+
+#myCarousel {
+  margin-bottom: 2em;
 }
 
 .nav-link {
@@ -44,16 +59,25 @@ nav {
   border: 1px solid white;
 }
 
+<<<<<<< HEAD
 #search:hover {
   background-color: #5f8a6d;
+=======
+#btn:hover {
+  background-color: #44614e;
+>>>>>>> styling-changes
 }
 
 #search-form {
   padding-top: 0.3rem;
 }
 
+.content {
+  padding-top: 5em;
+}
+
 .card {
-  background-color: #8f3d19;
+  background-color: #8864557e;
   border: 1px solid white;
   margin: 10px;
   text-align: justify;
@@ -68,7 +92,7 @@ nav {
 }
 
 .market-list {
-  background-color: #8f3d19;
+  background-color: #ca5b2b;
   border: 1px solid white;
   margin: 10px;
 }

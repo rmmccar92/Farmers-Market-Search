@@ -1,0 +1,96 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: auto;
+  background-color: #f7ebd9;
+  color: black;
+  text-align: center;
+}
+
+.navbar-light {
+  color: white;
+}
+
+a {
+  color: unset;
+  cursor: pointer;
+}
+
+nav {
+  background-color: #1e3325;
+  /* border: 3px solid #374f3f; */
+  width: 100%;
+}
+
+.nav-link {
+  color: white !important;
+  font-size: 1.5rem;
+}
+
+.nav-link:hover {
+  color: #5f8a6d;
+}
+
+#search {
+  color: white;
+  border: 1px solid white;
+}
+
+#search:hover {
+  background-color: #44614e;
+}
+
+#search-form {
+  padding-top: 0.3rem;
+}
+
+.card {
+  background-color: #8864557e;
+  border: 1px solid white;
+  margin: 10px;
+  text-align: justify;
+}
+
+.col-auto {
+  align-content: center;
+}
+
+.market-list {
+  background-color: #ca5b2b;
+  border: 1px solid white;
+  margin: 10px;
+  align-content: center;
+}
+
+.addition {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+.submit {
+  background-color: #374f3f;
+  color: white;
+  padding: 5px 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.submit:hover {
+  background-color: #8f3d19;
+  border: 1px solid white;
+}
+
+.btn-danger {
+  background-color: #374f3f;
+  border: 1px solid white;
+}
+
+.btn-danger:hover {
+  background-color: #8f3d19;
+  border: 1px solid white;
+}
+
+.footer-copyright {
+  background-color: #374f3f;
+}
