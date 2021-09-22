@@ -1,0 +1,15 @@
+{{#each markets as |market|}}
+
+  <div class="card">
+    <h2 class="card-header">
+      <a
+        class="userMarkets"
+        href="dashboard/market/{{market.id}}"
+      >{{market_name}}</a></h2>
+    <div class="card-body p-2 m-2">
+      <p class="card-text">{{market.address}} {{market.zipcode}}</p>
+      <div>{{market.hours}}</div>
+    </div>
+  </div>
+
+{{/each}}
