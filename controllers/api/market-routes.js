@@ -58,7 +58,7 @@ router.delete("/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+// Test comment
 router.post("/search", withAuth, async (req, res) => {
   try {
     // const marketData = await Market.findAll({
