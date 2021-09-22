@@ -1,20 +1,23 @@
 [
   {
-    "market_name": "Fantastic food 1",
-    "address": "address data",
-    "hours": "9 to 5",
-    "zipcode": "23666"
+    "market_name": "Salt of The Earth",
+    "address": "your street, your city",
+    "hours": "open to close",
+    "zipcode": "23666",
+    "description": "Family owned and operated since 1966 bringing fresh locally grown produce to your table. Produce includes but is not limited to: Collards, Tomatoes, Lima Beans, and Orange"
   },
   {
-    "market_name": "Fantastic food 2",
-    "address": "address data",
-    "hours": "9 to 5",
-    "zipcode": "23666"
+    "market_name": "Mothers Garden of Doom",
+    "address": "your street, your city",
+    "hours": "open to close",
+    "zipcode": "23912",
+    "description": "We sell nothing but ripe of the vine fruit at affordable prices come by and try a sample"
   },
   {
-    "market_name": "Fantastic food 3",
-    "address": "address data",
-    "hours": "9 to 5",
-    "zipcode": "23666"
+    "market_name": "Nothing but Zucchini",
+    "address": "your street, your city",
+    "hours": "open to close",
+    "zipcode": "12388",
+    "description": "Since 1942 our passion has been the pursuit of the perfect zucchini, we haven't grown it yet but our zucchini are closer than anyone else!!!"
   }
 ]
