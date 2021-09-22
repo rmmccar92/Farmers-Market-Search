@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const { Market, User } = require("../../models");
 const withAuth = require("../../utils/auth");
-
+const Sequelize = require("sequelize");
+const Op = Sequelize.Op;
 router.get("/", async (req, res) => {
   try {
     const marketData = await Market.findAll();
@@ -55,6 +56,46 @@ router.delete("/:id", async (req, res) => {
     res.status(200).json({ message: "Product removed." });
   } catch (err) {
     res.status(500).json(err);
+  }
+});
+// Test comment
+router.post("/search", withAuth, async (req, res) => {
+  try {
+    // const marketData = await Market.findAll({
+    //   where: {
+    //     zipcode: req.body.zipcode,
+    //   },
+    //   include: [{ model: User, attributes: { exclude: ["password"] } }],
+    // });
+    // if (!marketData) {
+    //   res.status(404).json({ message: "Invalid Zip Code" });
+    //   return;
+    // }
+    // const markets = marketData.map((market) => market.get({ plain: true }));
+
+    // res.render("all-markets", {
+    //   markets,
+    // });
+
+    const marketData = await Market.findAll({
+      where: {
+        zipcode: req.body.zipcode,
+        // { [Op.like]: "%" + term + "%" }
+      },
+    });
+    const markets = marketData.map((market) => market.get({ plain: true }));
+    req.session.save(() => {
+      req.session.marketData = markets;
+    });
+    // const markets = marketData.map((market) => market.get({ plain: true }));
+    // console.log(savedMarkets);
+    // res.render("all-markets", {
+    //   layout: "dashboard",
+    //   logged_in: req.session.logged_in,
+    //   markets,
+    // });
+  } catch (err) {
+    res.status(500).json(err).end();
   }
 });
 

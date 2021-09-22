@@ -2,7 +2,14 @@ const router = require("express").Router();
 const { User, Market } = require("../models");
 const withAuth = require("../utils/auth");
 
-router.get("/", withAuth, async (req, res) => {
+router.get("/", async (req, res) => {
+  res.render("homepage", {
+    layout: "splashpage",
+    logged_in: req.session.logged_in,
+  });
+});
+
+router.get("/home", withAuth, async (req, res) => {
   try {
     const marketData = await Market.findAll({
       include: [{ model: User, attributes: { exclude: ["password"] } }],
@@ -31,7 +38,7 @@ router.get("/add", withAuth, (req, res) => {
 // Account login and signup
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect("/");
+    res.redirect("/home");
     return;
   }
 
@@ -40,10 +47,24 @@ router.get("/login", (req, res) => {
 
 router.get("/signup", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect("/");
+    res.redirect("/home");
     return;
   }
 
   res.render("signup");
 });
+
+router.get("/results", (req, res) => {
+  const marketData = req.session.marketData;
+  console.log(marketData);
+
+  {
+    res.render("all-markets", {
+      logged_in: req.session.logged_in,
+      markets: marketData,
+      // markets: req.session.savedMarkets,
+    });
+  }
+});
+
 module.exports = router;
