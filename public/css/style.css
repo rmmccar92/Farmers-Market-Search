@@ -51,16 +51,18 @@ a {
 }
 
 .nav-link:hover {
-  color: #5f8a6d !important;
+  color: #f7ebd9 !important;
 }
 
-#search {
+.btn {
   color: white;
   border: 1px solid white;
+  background-color: #1e3325;
 }
 
-#btn:hover {
+.btn:hover {
   background-color: #44614e;
+  border: 1px solid white;
 }
 
 #search-form {
@@ -71,15 +73,16 @@ a {
   padding-top: 5em;
 }
 
-.card {
-  background-color: #8864557e;
-  border: 1px solid white;
-  margin: 10px;
-  text-align: justify;
+.card-header {
+  background-color: #374f3f;
+  color: white;
 }
 
-.card-header {
-  background-color: #723014;
+.card {
+  background-color: #c7ceb6;
+  border: 1px solid black;
+  margin: 10px;
+  text-align: justify;
 }
 
 .col-auto {
@@ -87,9 +90,10 @@ a {
 }
 
 .market-list {
-  background-color: #ca5b2b;
-  border: 1px solid white;
-  margin: 10px;
+  background-color: #c7ceb6;
+  color: black;
+  border: 1px solid black;
+  padding: 10px;
 }
 
 .userMarkets {
@@ -98,42 +102,23 @@ a {
 
 .userMarkets:hover {
   text-decoration: none;
-  color: #5f8a6d;
+  color: #353535;
 }
 
 .addition {
-  color: white;
+  color: black;
   text-decoration: none;
   text-align: center;
 }
 
 .addition:hover {
-  color: #5f8a6d;
+  color: #353535;
 }
 
-.submit {
-  background-color: #374f3f;
-  color: white;
-  padding: 5px 10px;
-  border: 1px solid white;
-  border-radius: 5px;
-}
-
-.submit:hover {
-  background-color: #5f8a6d;
-  border: 1px solid white;
-}
-
-.btn-danger {
-  background-color: #374f3f;
-  border: 1px solid white;
-}
-
-.btn-danger:hover {
-  background-color: #5f8a6d;
-  border: 1px solid white;
+.form-label {
+  color: black;
 }
 
 .footer-copyright {
-  background-color: #374f3f;
+  background-color: #1e3325;
 }
