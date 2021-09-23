@@ -1,12 +1,12 @@
 const searchFormHandler = async function (event) {
   event.preventDefault();
 
-  const searchEl = document.querySelector("#search-input");
+  const searchEl = document.querySelector("#search-input").value.trim();
   if (searchEl) {
-    const response = await fetch("api/markets/search", {
+    const response = await fetch("/search", {
       method: "POST",
       body: JSON.stringify({
-        zipcode: searchEl.value.trim(),
+        zipcode: searchEl,
       }),
       headers: { "Content-Type": "application/json" },
     });

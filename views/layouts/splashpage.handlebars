@@ -62,6 +62,7 @@
                 class="form-control me-2"
                 type="search"
                 id="search-input"
+                name="search-input"
                 placeholder="Search"
                 aria-label="Search"
               />
@@ -391,5 +392,8 @@
     crossorigin="anonymous"
   ></script>
       <script src="/JS/search.js"></script>
+        {{#if logged_in}}
+  <script src="/JS/logout.js"></script>
+  {{/if}}
 
 </html>

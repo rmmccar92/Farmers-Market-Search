@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const { User, Market } = require("../models");
 const withAuth = require("../utils/auth");
+const Sequelize = require("sequelize");
+const Op = Sequelize.Op;
 
 router.get("/", async (req, res) => {
   res.render("homepage", {
@@ -54,16 +56,22 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-router.get("/results", (req, res) => {
-  const marketData = req.session.marketData;
-  console.log(marketData);
-
-  {
-    res.render("all-markets", {
-      logged_in: req.session.logged_in,
-      markets: marketData,
-      // markets: req.session.savedMarkets,
+router.get("/search", (req, res) => {
+  console.log(req.body.zipcode);
+  try {
+    const marketData = Market.findAll({
+      where: {
+        zipcode: { [Op.eq]: req.body.zipcode },
+      },
     });
+    const markets = marketData.map((market) => market.get({ plain: true }));
+    res.render("all-markets", {
+      layout: "dashboard",
+      ...markets,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
