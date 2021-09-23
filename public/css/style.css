@@ -43,6 +43,7 @@ a {
 
 #myCarousel {
   margin-bottom: 2em;
+  aspect-ratio: 16 / 9;
 }
 
 .nav-link {
