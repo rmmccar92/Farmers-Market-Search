@@ -20,6 +20,11 @@ const searchFormHandler = async function (event) {
   }
 };
 
+if (searchFormHandler) {
+  console.log(searchFormHandler);
+}
+
+
 document
   .querySelector(".search-btn")
   .addEventListener("click", searchFormHandler);

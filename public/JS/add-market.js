@@ -13,7 +13,10 @@ const newMarketHandler = async (event) => {
   const zipcodeEl = document
     .querySelector('input[name="market-zip"]')
     .value.trim();
-  if (nameEl && hoursEl && addressEl && zipcodeEl) {
+  const descriptionEl = document
+    .querySelector('input[name="market-description"]')
+    .value.trim();
+  if (nameEl && hoursEl && addressEl && zipcodeEl && descriptionEl) {
     const response = await fetch("/api/markets", {
       method: "POST",
       body: JSON.stringify({
@@ -21,11 +24,12 @@ const newMarketHandler = async (event) => {
         hours: hoursEl,
         address: addressEl,
         zipcode: zipcodeEl,
+        description: descriptionEl,
       }),
       headers: { "Content-Type": "application/json" },
     });
     if (response.ok) {
-      document.location.replace("/");
+      document.location.replace("/dashboard");
     } else {
       console.log("Something went wrong");
     }
