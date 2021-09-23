@@ -21,8 +21,7 @@
 
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-expand-md fixed-top">
+      <nav class="navbar navbar-expand-md navbar-light fixed-top">
         <div class="container-fluid">
           <button
             class="navbar-toggler"
@@ -38,11 +37,7 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
               <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="/home"
-                >Home</a>
+                <a class="nav-link active" aria-current="page" href="/home">Home</a>
               </li>
               {{#if logged_in}}
                 <li>
@@ -72,7 +67,6 @@
           </div>
         </div>
       </nav>
-    </header>
 
     <main>
       <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -391,5 +385,7 @@
     crossorigin="anonymous"
   ></script>
       <script src="/JS/search.js"></script>
-
+  {{#if logged_in}}
+  <script src="/JS/logout.js"></script>
+  {{/if}}
 </html>
