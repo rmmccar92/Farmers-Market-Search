@@ -43,6 +43,21 @@ a {
 
 #myCarousel {
   margin-bottom: 2em;
+  aspect-ratio: 16 / 9;
+}
+
+.vignette:after {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0px 0px 200px 150px rgba(0, 0, 0, 0.8);
+}
+
+.info {
+  margin-bottom: 5em;
 }
 
 .nav-link {

@@ -21,8 +21,7 @@
 
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-expand-md fixed-top">
+      <nav class="navbar navbar-expand-md navbar-light fixed-top">
         <div class="container-fluid">
           <button
             class="navbar-toggler"
@@ -38,11 +37,7 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
               <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="/home"
-                >Home</a>
+                <a class="nav-link active" aria-current="page" href="/home">Home</a>
               </li>
               {{#if logged_in}}
                 <li>
@@ -57,9 +52,11 @@
                 </li>
               {{/if}}
             </ul>
-            <form class="d-flex">
+            {{#if logged_in}}
+            <form action="/search" class="d-flex">
               <input
                 class="form-control me-2"
+                name="zipcode"
                 type="search"
                 id="search-input"
                 placeholder="Search"
@@ -68,11 +65,11 @@
               <button class="btn btn-outline-success search-btn" type="submit">
                 Search
               </button>
-            </form>
+            </form>                          
+            {{/if}}
           </div>
         </div>
       </nav>
-    </header>
 
     <main>
       <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -100,6 +97,7 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
+            <div class="vignette">
             <img
               class="bd-placeholder-img"
               width="100%"
@@ -109,17 +107,18 @@
               preserveAspectRatio="xMidYMid slice"
               focusable="false"
             ><rect width="100%" height="100%" fill="#777"></rect></svg>
+            </div>
 
             <div class="container">
               <div class="carousel-caption text-start">
-                <h1>Example headline.</h1>
-                <p>Some representative placeholder content for the first slide
-                  of the carousel.</p>
+                <h1>Search</h1>
+                <p>Find communal sustainable markets</p>
                 <p><a class="btn btn-lg btn-primary" href="/login">Sign up today</a></p>
               </div>
             </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item">                        
+            <div class="vignette">
             <img
               class="bd-placeholder-img"
               width="100%"
@@ -129,17 +128,18 @@
               preserveAspectRatio="xMidYMid slice"
               focusable="false"
             ><rect width="100%" height="100%" fill="#777"></rect></svg>
+            </div>
 
             <div class="container">
               <div class="carousel-caption">
-                <h1>Another example headline.</h1>
-                <p>Some representative placeholder content for the second slide
-                  of the carousel.</p>
-                <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                <h1>Add</h1>
+                <p>Advertise your own solo farming market</p>
+                <p><a class="btn btn-lg btn-primary" href="/login">Sign up today</a></p>
               </div>
             </div>
           </div>
           <div class="carousel-item">
+          <div class="vignette">
             <img
               class="bd-placeholder-img"
               width="100%"
@@ -149,13 +149,13 @@
               preserveAspectRatio="xMidYMid slice"
               focusable="false"
             ><rect width="100%" height="100%" fill="#777"></rect></svg>
+            </div>
 
             <div class="container">
               <div class="carousel-caption text-end">
-                <h1>One more for good measure.</h1>
-                <p>Some representative placeholder content for the third slide
-                  of this carousel.</p>
-                <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+                <h1>Explore</h1>
+                <p>Support your local community</p>
+                <p><a class="btn btn-lg btn-primary" href="/login">Sign up today</a></p>
               </div>
             </div>
           </div>
@@ -180,11 +180,8 @@
         </button>
       </div>
 
-      <!-- Marketing messaging and featurettes
-  ================================================== -->
-      <!-- Wrap the rest of the page in another container to center all the content. -->
 
-      <div class="container marketing">
+      <div class="container marketing info">
         <!-- Three columns of text below the carousel -->
         <div class="row">
           <div class="col-lg-4">
@@ -265,12 +262,38 @@
             </p>
           </div>
           <!-- /.col-lg-4 -->
+          <div class="col-lg-4 mx-auto">
+            <svg
+              class="bd-placeholder-img rounded-circle"
+              width="140"
+              height="140"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Placeholder: 140x140"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+            >
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#777"></rect>
+              <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+            </svg>
+
+            <h2>Heading</h2>
+            <p>
+              And lastly this, the third column of representative placeholder
+              content.
+            </p>
+            <p>
+              <a class="btn btn-secondary" href="#">View details &raquo;</a>
+            </p>
+          </div>
+
         </div>
         <!-- /.row -->
 
         <!-- START THE FEATURETTES -->
 
-        <hr class="featurette-divider" />
+        {{!-- <hr class="featurette-divider" />
 
         <div class="row featurette">
           <div class="col-md-7">
@@ -366,7 +389,7 @@
           </div>
         </div>
 
-        <hr class="featurette-divider" />
+        <hr class="featurette-divider" /> --}}
 
         <!-- /END THE FEATURETTES -->
       </div>
@@ -374,15 +397,12 @@
       <!-- /.container -->
 
       <!-- FOOTER -->
-      <footer class="container">
-        <p class="float-end"><a href="#">Back to top</a></p>
-        <p>
-          &copy; 2017–2021 Company, Inc. &middot;
-          <a href="#">Privacy</a>
-          &middot;
-          <a href="#">Terms</a>
-        </p>
-      </footer>
+    <footer class="fixed-bottom navbar-dark text-light">
+      <!-- Copyright -->
+      <div class="footer-copyright text-center p-4">© 2021 Copyright:
+        <a href="https://github.com/rmmccar92" class="text-light"></a>
+      </div>
+    </footer>
     </main>
   </body>
   <script
@@ -391,5 +411,7 @@
     crossorigin="anonymous"
   ></script>
       <script src="/JS/search.js"></script>
-
+  {{#if logged_in}}
+  <script src="/JS/logout.js"></script>
+  {{/if}}
 </html>
