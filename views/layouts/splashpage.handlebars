@@ -52,9 +52,11 @@
                 </li>
               {{/if}}
             </ul>
-            <form class="d-flex">
+            {{#if logged_in}}
+            <form action="/search" class="d-flex">
               <input
                 class="form-control me-2"
+                name="zipcode"
                 type="search"
                 id="search-input"
                 placeholder="Search"
@@ -63,7 +65,8 @@
               <button class="btn btn-outline-success search-btn" type="submit">
                 Search
               </button>
-            </form>
+            </form>                          
+            {{/if}}
           </div>
         </div>
       </nav>
