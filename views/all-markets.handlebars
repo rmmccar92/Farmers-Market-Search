@@ -1,20 +1,24 @@
 {{#each markets as |market|}}
 
-  <div class="card market-card">
-    <h2 class="card-header">
-      <a
-        class="userMarkets"
-        href="dashboard/market/{{market.id}}"
-      >{{market_name}}</a></h2>
-    <div class="card-body p-2 m-2">
-      <div><h6>Location:</h6><p class="card-text">{{market.address}}
-          {{market.zipcode}}</p></div>
-      <div><h6>About Us:</h6><p
-          class="card-text"
-        >{{market.description}}</p></div>
-      <div><h6>Hours:</h6> {{market.hours}}</div>
-
+<div class="card market-card">
+  <h2 class="card-header">
+    <a class="userMarkets" href="dashboard/market/{{market.id}}">{{market_name}}</a>
+  </h2>
+  <div class="card-body p-2 m-2">
+    <div>
+      <h6>Location:</h6>
+      <p class="card-text">{{market.address}}
+        {{market.zipcode}}</p>
     </div>
+    <div>
+      <h6>About Us:</h6>
+      <p class="card-text">{{market.description}}</p>
+    </div>
+    <div>
+      <h6>Hours:</h6> {{market.hours}}
+    </div>
+
   </div>
+</div>
 
 {{/each}}
