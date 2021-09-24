@@ -44,6 +44,11 @@ a {
 #myCarousel {
   margin-bottom: 2em;
   aspect-ratio: 16 / 9;
+  opacity: 0;
+}
+
+.carousel-caption {
+  bottom: -100px;
 }
 
 .vignette:after {
@@ -58,6 +63,22 @@ a {
 
 .info {
   margin-bottom: 5em;
+}
+
+.info-card {
+  position: relative;
+  bottom: -700px;
+  opacity: 0;
+}
+
+.market-card {
+  position: relative;
+  left: -2000px;
+  /* opacity: 0; */
+}
+
+.market-list {
+  opacity: 0;
 }
 
 .nav-link {
@@ -136,4 +157,9 @@ a {
 
 .footer-copyright {
   background-color: #1e3325;
+}
+
+footer {
+  position: relative;
+  opacity: 0;
 }

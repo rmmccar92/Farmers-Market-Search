@@ -38,13 +38,16 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
               <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="/home"
-                >Home</a>
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
               {{#if logged_in}}
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="/home"
+                  >Markets</a>
+                </li>
                 <li>
                   <a class="nav-link" href="/dashboard">Dashboard</a>
                 </li>
@@ -98,10 +101,13 @@
     <footer class="fixed-bottom navbar-dark bg-dark text-light">
       <!-- Copyright -->
       <div class="footer-copyright text-center p-4">© 2021 Copyright:
-        <a href="https://github.com/rmmccar92" class="text-light"></a>
       </div>
 
     </footer>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"
+    ></script>
+    <script src="/JS/dashboard.js"></script>
     {{#if logged_in}}
       <script src="JS/logout.js"></script>
     {{/if}}
