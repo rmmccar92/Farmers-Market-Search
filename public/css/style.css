@@ -64,7 +64,9 @@ a {
 .info {
   margin-bottom: 5em;
 }
-
+.team-head {
+  opacity: 0;
+}
 .info-card {
   position: relative;
   bottom: -700px;
@@ -96,11 +98,17 @@ a {
   background-color: #1e3325;
 }
 
+.dashboard-card {
+  width: 8.5em;
+}
+
 .btn:hover {
   background-color: #44614e;
   border: 1px solid white;
 }
-
+.card-back {
+  padding: 0.35em 1.75em 0.35em 1.75em;
+}
 #search-form {
   padding-top: 0.3rem;
 }
@@ -162,4 +170,24 @@ a {
 footer {
   position: relative;
   opacity: 0;
+}
+
+.rounded-circle {
+  border: solid #1e3325 0.15em;
+}
+
+.add-text {
+  position: absolute;
+  bottom: 0.5em;
+  font-weight: bold;
+  opacity: 0;
+  font-size: 0.9em;
+  padding: 0;
+  margin: 0;
+  /* width: 5.5em; */
+}
+
+.icon {
+  font-size: 1.5em;
+  margin-left: -0.5em;
 }

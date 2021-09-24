@@ -58,9 +58,7 @@ router.get("/signup", (req, res) => {
 
 router.get("/search", async (req, res) => {
   let { search } = req.query;
-  console.log(req.query);
   try {
-    console.log({ search });
     const searchData = await Market.findAll({
       where: {
         zipcode: {
