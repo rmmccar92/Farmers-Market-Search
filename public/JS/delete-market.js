@@ -1,4 +1,5 @@
 const deleteButtonHandler = async (event) => {
+  event.preventDefault();
   if (event.target.hasAttribute("data-id")) {
     const id = event.target.getAttribute("data-id");
 
@@ -14,6 +15,4 @@ const deleteButtonHandler = async (event) => {
   }
 };
 
-document
-  .querySelector(".market-list")
-  .addEventListener("click", deleteButtonHandler);
+$(".market-list").on("click", ".btn", deleteButtonHandler);

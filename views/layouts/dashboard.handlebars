@@ -10,6 +10,12 @@
       integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -85,7 +91,7 @@
     <main class="col-auto content">
       {{{body}}}
       {{#if logged_in}}
-        <div class="add-button">
+        {{! <div class="add-button">
           <div class="row dashboard-card text-center mx-auto">
             <div class="card col-4 mx-auto">
               <a
@@ -95,7 +101,7 @@
               >➕ Add Market</a>
             </div>
           </div>
-        </div>
+        </div> }}
       {{/if}}
     </main>
     <footer class="fixed-bottom navbar-dark bg-dark text-light">
@@ -110,6 +116,7 @@
     <script src="/JS/dashboard.js"></script>
     {{#if logged_in}}
       <script src="JS/logout.js"></script>
+      {{! <script src="JS/delete-market.js"></script> }}
     {{/if}}
 
     <script

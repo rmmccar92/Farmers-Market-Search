@@ -60,6 +60,7 @@
                 id="search-input"
                 placeholder="Zip Code"
                 aria-label="Search"
+                required="true"
               />
               <button class="btn btn-outline-success search-btn" type="submit">
                 Search
@@ -76,15 +77,15 @@
       <h1>Welcome to the Farmer's Martket Search Page!</h1>
     </div>
     {{{body}}}
-    {{#if logged_in}}
-    <div class="add-button">
+   {{#if logged_in}}
+    {{!-- <div class="add-button">
       <div class="row dashboard-card text-center mx-auto">
         <div class="card col-4 mx-auto">
           <a class="addition" href="/add" class="text-center text-dark mx-auto">➕ Add
             Market</a>
         </div>
       </div>
-    </div>
+    </div> --}}
     {{/if}}
   </main>
     <footer class="fixed-bottom navbar-dark bg-dark text-light">

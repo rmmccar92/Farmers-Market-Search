@@ -33,6 +33,21 @@ const newMarketHandler = async (event) => {
     } else {
       console.log("Something went wrong");
     }
+  } else {
+    gsap.fromTo(
+      "#new-market-form",
+      0.12,
+      { x: -20 },
+      {
+        x: 20,
+        repeat: 5,
+        yoyo: true,
+        ease: Sine.easeInOut,
+        onComplete: function () {
+          gsap.to("#new-market-form", 0.5, { x: 0, ease: Elastic.easeOut });
+        },
+      }
+    );
   }
 };
 
