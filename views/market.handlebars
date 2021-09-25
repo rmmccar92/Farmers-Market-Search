@@ -1,14 +1,21 @@
 <main class="container mt-5">
   <div class="card market-list">
     <h2 class="card-header">
-      <a class="userMarkets" href="#">{{market_name}}</a></h2>
+      <a class="userMarkets" href="#">{{market_name}}</a>
+    </h2>
     <div class="card-body p-2 m-2">
+      <h6>Location:</h6>
       <p class="card-text">{{address}} {{zipcode}}</p>
-      <div><h6>About Us:</h6><p class="card-text">{{description}}</p></div>
-      <div class="m-1">{{hours}}</div>
+      <div>
+        <h6>About Us:</h6>
+        <p class="card-text">{{description}}</p>
+      </div>
+      <div class="m-1">
+        <h6>Hours:</h6>{{hours}}
+      </div>
     </div>
   </div>
 </main>
 {{#if logged_in}}
-  <script src="../../JS/logout.js"></script>
+<script src="../../JS/logout.js"></script>
 {{/if}}
