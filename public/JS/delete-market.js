@@ -15,4 +15,4 @@ const deleteButtonHandler = async (event) => {
   }
 };
 
-$(".market-list").on("click", ".btn", deleteButtonHandler);
+$(".market-list").on("click", ".delete", deleteButtonHandler);
