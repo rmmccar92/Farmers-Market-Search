@@ -10,12 +10,14 @@
         <h4><a class="userMarkets" href="dashboard/market/{{market.id}}">{{market_name}}</a></h4>
       </div>
       <div class="col-md-4 align-middle">
-        <button class="btn btn-sm btn-danger" data-id="{{market.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger delete" data-id="{{market.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
   </div>
-  <div class="add-button">
+
+  {{/if}} 
+    <div class="add-button">
           <div class="row dashboard-card text-center mx-auto">
             <div class="card col-4 mx-auto card-back">
               <a
@@ -27,8 +29,7 @@
               <div class="add-text"></div></a>
             </div>
           </div>
-        </div> 
-  {{/if}} 
+        </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   {{#if logged_in}}

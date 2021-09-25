@@ -5,6 +5,7 @@ body {
   background-color: #f7ebd9;
   color: black;
   text-align: center;
+  font-family: "Lato";
 }
 .bd-placeholder-img {
   font-size: 1.125rem;
@@ -76,7 +77,7 @@ a {
 .market-card {
   position: relative;
   left: -2000px;
-  /* opacity: 0; */
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .market-list {
