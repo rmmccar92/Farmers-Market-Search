@@ -107,7 +107,6 @@ a {
   border: 1px solid white;
 }
 .card-back {
-  padding: 0.35em 1.75em 0.35em 1.75em;
 }
 #search-form {
   padding-top: 0.3rem;
@@ -178,16 +177,14 @@ footer {
 
 .add-text {
   position: absolute;
-  bottom: 0.5em;
+  bottom: 0.15em;
   font-weight: bold;
-  opacity: 0;
+  opacity: 1;
   font-size: 0.9em;
-  padding: 0;
-  margin: 0;
-  /* width: 5.5em; */
+  width: 6.5em;
 }
 
 .icon {
   font-size: 1.5em;
-  margin-left: -0.5em;
+  /* margin-left: -0.5em; */
 }
