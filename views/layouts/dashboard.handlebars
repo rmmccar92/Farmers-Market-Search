@@ -75,6 +75,7 @@
                   id="search-input"
                   placeholder="Zip Code"
                   aria-label="Search"
+                  required="true"
                 />
                 <button
                   class="btn btn-outline-success search-btn"
@@ -90,19 +91,7 @@
     </header>
     <main class="col-auto content">
       {{{body}}}
-      {{#if logged_in}}
-        <div class="add-button">
-          <div class="row dashboard-card text-center mx-auto">
-            <div class="card col-4 mx-auto">
-              <a
-                class="addition"
-                href="/add"
-                class="text-center text-dark mx-auto"
-              >➕ Add Market</a>
-            </div>
-          </div>
-        </div>
-      {{/if}}
+
     </main>
     <footer class="fixed-bottom navbar-dark bg-dark text-light">
       <!-- Copyright -->
@@ -112,6 +101,9 @@
     </footer>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/TextPlugin.min.js"
     ></script>
     <script src="/JS/dashboard.js"></script>
     {{#if logged_in}}
