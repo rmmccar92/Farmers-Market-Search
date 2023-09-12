@@ -2,7 +2,7 @@
 
 [Repository Link](https://github.com/rmmccar92/Farmers-Market-Search)
 
-[Deployed Farmer's Market Search](https://still-tor-25996.herokuapp.com/)
+[Deployed Farmer's Market Search](https://farmers-market-search-production.up.railway.app/)
 
 ## Table of Contents
 
